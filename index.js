@@ -10,8 +10,8 @@ let worksheet = {};
 for (const sheetName of workbook.SheetNames) {
   worksheet[sheetName] = xlsx.utils.sheet_to_json(workbook.Sheets[sheetName]);
 }
-const sheet1 = worksheet.Planilha1;
 
+const sheet1 = worksheet.Planilha1;
 const client = new Client();
 
 const personContacts = [];
@@ -102,38 +102,3 @@ client.on("ready", async () => {
 });
 
 client.initialize();
-
-/* sheet1.forEach((linha) => {
-  const servicos = [];
-  if (linha.Quantidade)
-    servicos.push(
-      `${linha.Quantidade} passeios totalizando R$ ${linha.passeio}`
-    );
-  if (linha.Quantidade_1)
-    servicos.push(
-      `${linha.Quantidade_1} pet sitters totalizando R$ ${linha.petSitter}`
-    );
-  if (linha.Quantidade_2)
-    servicos.push(
-      `${linha.Quantidade_2} hospedagens totalizando R$ ${linha.hospedagem}`
-    );
-  if (linha.Quantidade_3)
-    servicos.push(`${linha.Quantidade_3} banhos totalizando R$ ${linha.banho}`);
-  if (linha.Quantidade_4)
-    servicos.push(
-      `${linha.Quantidade_4} adestramentos totalizando R$ ${linha.adestramento}`
-    );
-  if (linha.Quantidade_5)
-    servicos.push(
-      `${linha.Quantidade_5} day care totalizando R$${linha.dayCare}`
-    );
-  if (linha.Quantidade_6)
-    servicos.push(
-      `${linha.Quantidade_6} transportes totalizando R$ ${linha.transporte}`
-    );
-  console.log(
-    `Para ${linha.Clientes} foram realizados ${servicos.join(
-      ", "
-    )}. Total: R$ ${linha.total}`
-  );
-}); */
